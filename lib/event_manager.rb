@@ -85,9 +85,9 @@ contents.each do |row|
 
   register_days[time_registered.strftime('%A')] += 1
 
-  #form_letter = erb_template.result(binding) 11/12/08 10:47
+  form_letter = erb_template.result(binding) 11/12/08 10:47
 
-  #save_thank_you_letter(id, form_letter)
+  save_thank_you_letter(id, form_letter)
 end
 
 save_registration_times(register_hours, 'Hour')
