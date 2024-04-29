@@ -47,11 +47,11 @@ def clean_phone_numbers(phone)
 end
 
 def save_registration_times(registrations, time)
-  File.write("../#{time}_trends.csv", "#{time}, registered") unless File.exist?("../#{time}_trends.csv")
-  registration_trends = CSV.new(File.open("../#{time}_trends.csv"))
+  File.write("../output/#{time}_trends.csv", "#{time}, registered") unless File.exist?("../output/#{time}_trends.csv")
+  registration_trends = CSV.new(File.open("../output/#{time}_trends.csv"))
 
-  CSV.open("../#{time}_trends.csv", 'w') do |csv|
-    csv << ["#{time}", 'registered']
+  CSV.open("../output/#{time}_trends.csv", 'w') do |csv|
+    csv << [time.to_s, 'registered']
     registrations.each { |k, v| csv << [k, v] }
   end
 end
